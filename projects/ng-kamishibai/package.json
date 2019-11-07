@@ -1,6 +1,19 @@
 {
   "name": "ng-kamishibai",
-  "version": "0.0.1",
+  "description": "Page transition library for Angular",
+  "version": "1.0.0",
+  "author": "Daisuke Suzuki",
+  "license": "MIT",
+  "bugs": "https://github.com/dddsuzuki/ng-kamishibai/issues",
+  "keywords": [
+    "angular",
+    "page",
+    "transition"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/dddsuzuki/ng-kamishibai.git"
+  },
   "peerDependencies": {
     "@angular/common": "^8.2.13",
     "@angular/core": "^8.2.13"
