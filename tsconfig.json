@@ -17,7 +17,15 @@
     "lib": [
       "es2018",
       "dom"
-    ]
+    ],
+    "paths": {
+      "ng-kamishibai": [
+        "dist/ng-kamishibai"
+      ],
+      "ng-kamishibai/*": [
+        "dist/ng-kamishibai/*"
+      ]
+    }
   },
   "angularCompilerOptions": {
     "fullTemplateTypeCheck": true,
