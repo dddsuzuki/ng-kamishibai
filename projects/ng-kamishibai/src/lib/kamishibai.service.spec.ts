@@ -1,12 +1,12 @@
 import { TestBed } from '@angular/core/testing';
 
-import { NgKamishibaiService } from './ng-kamishibai.service';
+import { KamishibaiService } from './kamishibai.service';
 
-describe('NgKamishibaiService', () => {
+describe('PageService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: NgKamishibaiService = TestBed.get(NgKamishibaiService);
+    const service: KamishibaiService = TestBed.get(KamishibaiService);
     expect(service).toBeTruthy();
   });
 });

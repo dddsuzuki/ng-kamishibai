@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NgKamishibaiComponent } from './ng-kamishibai.component';
+import { KamishibaiComponent } from './kamishibai.component';
 
-describe('NgKamishibaiComponent', () => {
-  let component: NgKamishibaiComponent;
-  let fixture: ComponentFixture<NgKamishibaiComponent>;
+describe('KamishibaiComponent', () => {
+  let component: KamishibaiComponent;
+  let fixture: ComponentFixture<KamishibaiComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NgKamishibaiComponent ]
+      declarations: [ KamishibaiComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NgKamishibaiComponent);
+    fixture = TestBed.createComponent(KamishibaiComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
