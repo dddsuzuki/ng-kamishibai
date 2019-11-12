@@ -42,6 +42,15 @@ export class PageService {
     this.currentPage.next(this.pages.getValue()[this.pageIndex.getValue()]);
   }
 
+  previous() {
+    if (this.pageIndex.getValue() <= 0) {
+      return;
+    }
+
+    this.pageIndex.next(this.pageIndex.getValue() - 1);
+    this.currentPage.next(this.pages.getValue()[this.pageIndex.getValue()]);
+  }
+
   add(component: any) {
     const pages = [ ...this.pages.getValue(), component ];
     this.pages.next(pages);
