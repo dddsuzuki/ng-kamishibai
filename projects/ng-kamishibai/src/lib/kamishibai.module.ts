@@ -1,6 +1,5 @@
 import { NgModule, ModuleWithProviders } from '@angular/core';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { CommonModule } from '@angular/common';
 import { KAMISHIBAI_PAGES } from './page.service';
 import { KamishibaiService } from './kamishibai.service';
 import { ContainerComponent } from './container.component';
@@ -12,8 +11,7 @@ import { KamishibaiComponent } from './kamishibai.component';
     KamishibaiComponent,
   ],
   imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
+    CommonModule,
   ],
   exports: [
     KamishibaiComponent,
