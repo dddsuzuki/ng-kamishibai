@@ -20,11 +20,9 @@ import { PageService } from './page.service';
       height: 100%;
     }`,
     `.Page {
-      position: absolute;
-      top: 0;
-      left: 0;
       width: 100%;
       height: 100%;
+      overflow: hidden;
     }`,
   ],
   animations: [
@@ -34,6 +32,11 @@ import { PageService } from './page.service';
         animate('250ms ease-out', style({transform: 'translateX(0%)'}))
       ]),
       transition(':leave', [
+        style({
+          position: 'absolute',
+          top: 0,
+          left: 0,
+        }),
         animate('250ms ease-out', style({transform: 'translateX(-100%)'}))
       ])
     ])
