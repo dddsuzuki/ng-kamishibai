@@ -1,7 +1,7 @@
 {
   "name": "ng-kamishibai",
   "description": "Page transition library for Angular",
-  "version": "1.2.2",
+  "version": "1.2.3",
   "author": "Daisuke Suzuki",
   "license": "MIT",
   "bugs": "https://github.com/dddsuzuki/ng-kamishibai/issues",
