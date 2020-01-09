@@ -8,7 +8,7 @@ import { PageService } from './page.service';
     <div class="Container">
       <ng-container *ngFor="let page of (pages$ | async); index as i">
         <div class="Page" @slideInOut *ngIf="i === (pageIndex$ | async)">
-          <kamishibai-container></kamishibai-container>
+          <kamishibai-container [page]="page"></kamishibai-container>
         </div>
       </ng-container>
     </div>

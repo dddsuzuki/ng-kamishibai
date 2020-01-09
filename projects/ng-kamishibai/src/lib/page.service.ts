@@ -10,7 +10,6 @@ export class PageService {
 
   private pageIndex = new BehaviorSubject(0);
   private pages: BehaviorSubject<any[]>;
-  private currentPage: BehaviorSubject<any>;
 
   get pageIndex$(): Observable<number> {
     return this.pageIndex.asObservable();
@@ -20,17 +19,12 @@ export class PageService {
     return this.pages.asObservable();
   }
 
-  get currentPage$(): Observable<any> {
-    return this.currentPage.asObservable();
-  }
-
   constructor(@Optional() @Inject(KAMISHIBAI_PAGES) pages: any[]) {
     if (pages === null) {
       pages = [];
     }
 
     this.pages = new BehaviorSubject(pages);
-    this.currentPage = new BehaviorSubject(pages[this.pageIndex.getValue()]);
   }
 
   next() {
@@ -39,7 +33,6 @@ export class PageService {
     }
 
     this.pageIndex.next(this.pageIndex.getValue() + 1);
-    this.currentPage.next(this.pages.getValue()[this.pageIndex.getValue()]);
   }
 
   previous() {
@@ -48,12 +41,16 @@ export class PageService {
     }
 
     this.pageIndex.next(this.pageIndex.getValue() - 1);
-    this.currentPage.next(this.pages.getValue()[this.pageIndex.getValue()]);
   }
 
   add(component: any) {
     const pages = [ ...this.pages.getValue(), component ];
     this.pages.next(pages);
+  }
+
+  clear() {
+    this.pageIndex.next(0);
+    this.pages.next([]);
   }
 
 }

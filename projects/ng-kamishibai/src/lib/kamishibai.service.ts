@@ -14,8 +14,16 @@ export class KamishibaiService {
     this.pageService.next();
   }
 
+  previous() {
+    this.pageService.previous();
+  }
+
   add(component: any) {
     this.pageService.add(component);
+  }
+
+  clear() {
+    this.pageService.clear();
   }
 
 }

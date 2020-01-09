@@ -1,6 +1,4 @@
-import { Component, OnInit, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
-import { first } from 'rxjs/operators';
-import { PageService } from './page.service';
+import { Component, OnInit, Input, ComponentFactoryResolver, ViewChild, ViewContainerRef } from '@angular/core';
 
 @Component({
   selector: 'kamishibai-container',
@@ -10,22 +8,22 @@ import { PageService } from './page.service';
   styleUrls: []
 })
 export class ContainerComponent implements OnInit {
-  @ViewChild('page', { read: ViewContainerRef, static: true }) page: ViewContainerRef;
+  @ViewChild('page', { read: ViewContainerRef, static: true }) ref: ViewContainerRef;
+
+  @Input() set page(page: any) {
+    if (!page) {
+      return;
+    }
+
+    const componentFactory = this.componentFactoryResolver.resolveComponentFactory(page);
+    this.ref.createComponent(componentFactory);
+  }
 
   constructor(
-    private componentFactoryResolver: ComponentFactoryResolver,
-    private pageService: PageService,
+    private componentFactoryResolver: ComponentFactoryResolver
   ) { }
 
   ngOnInit() {
-    this.pageService.currentPage$.pipe(first()).subscribe(page => {
-
-      if (!page) {
-        return;
-      }
-
-      const componentFactory = this.componentFactoryResolver.resolveComponentFactory(page);
-      this.page.createComponent(componentFactory);
-    });
   }
+
 }
