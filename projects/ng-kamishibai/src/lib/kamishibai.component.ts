@@ -18,10 +18,12 @@ import { PageService } from './page.service';
       position: relative;
       width: 100%;
       height: 100%;
+      overflow-x: hidden;
     }`,
     `.Page {
       width: 100%;
       height: 100%;
+      overflow-x: auto;
     }`,
   ],
   animations: [
